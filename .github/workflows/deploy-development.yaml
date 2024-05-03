@@ -1,40 +1,35 @@
-name: Deploy to Railway Dev ENV
+name : Deploy to Dev Environment
 
 on:
   push:
     branches:
-      - "develop"
+      - develop
 
 jobs:
-  deplov:
+  build:
     runs-on: ubuntu-latest
 
-stepts:
-  - name: Checkout
-    uses: actions/checkout@v4
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
 
-  - name: Install NodeJS 18.x
-    uses: actions/setup-node@v3
-    with:
-      node-version: 18.x
-    
-  - name: Install Packages
-    run: npm Install
+    - name: Install NodeJS 18.x
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18.x'
 
-  - name: Install Railway CLI
-    run: npm i -g @railway/cli
+    - name: Install packages
+      run: npm install
 
-  - name: Install Prisma
-    run: npm install prisma
+    - name: Install Railway CLI
+      run: npm i -g @railway/cli
 
-  - name: Run Migration
-    run: |
-      export DATABASE_URL="${{secrets.RAILWAY_DEV_DATABASE_URL}}"
-      npx prisma migrate deplov 
+    - name: run migrations
+      run: railway run --service ${{ secrets.RAILWAY_SERVICE_ID }} npx prisma migrate deploy
+      env:
+        RAILWAY_TOKEN: ${{ secrets.RAILWAY_DEV_TOKEN }}
 
-
-  - name: Deploy to Railway
-    run: railway up --service ${{ secrets.RAILWAY_SERVICE_ID}}
-    env:
-      RAILWAY_TOKEN: ${{secrets.RAILWAY_DEV_TOKEN}}
-  
+    - name: Deploy to Railway
+      run: railway up --service ${{ secrets.RAILWAY_SERVICE_ID }}
+      env:
+        RAILWAY_TOKEN: ${{ secrets.RAILWAY_DEV_TOKEN }}
