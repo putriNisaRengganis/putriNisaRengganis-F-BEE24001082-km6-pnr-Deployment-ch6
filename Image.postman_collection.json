@@ -1,0 +1,235 @@
+{
+	"info": {
+		"_postman_id": "cd22d2a6-5563-42a7-8771-162bda94025a",
+		"name": "Image",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25958414"
+	},
+	"item": [
+		{
+			"name": "images Server",
+			"item": [
+				{
+					"name": "upload",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1ef08deb-1438-4990-b4c4-90946ae16f5b"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://expressjs-development-3e16.up.railway.app/upload",
+							"protocol": "https",
+							"host": [
+								"expressjs-development-3e16",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"Putri\",\n    \"email\" : \"putri@gmail.com\",\n    \"password\" : \"pass\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://expressjs-development-3e16.up.railway.app/register",
+							"protocol": "https",
+							"host": [
+								"expressjs-development-3e16",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create images",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\" : \"Gambar 1\",\n    \"description\" : \"deskripsi dari gambar 1\",\n    \"image_url\" : \"https://ik.imagekit.io/lw0qy72zc/1714694471905_VfhmAP_iB.png\",\n    \"user_id\" : 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://expressjs-development-3e16.up.railway.app/images",
+							"protocol": "https",
+							"host": [
+								"expressjs-development-3e16",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update images",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\" : \"Gambar 1 edited\",\n    \"description\" : \"deskripsi dari gambar 1 edit\",\n    \"image_url\" : \"https://ik.imagekit.io/lw0qy72zc/1714694471905_VfhmAP_iB.png\",\n    \"user_id\" : 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://expressjs-development-3e16.up.railway.app/images/1",
+							"protocol": "https",
+							"host": [
+								"expressjs-development-3e16",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"images",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://expressjs-development-3e16.up.railway.app/images",
+							"protocol": "https",
+							"host": [
+								"expressjs-development-3e16",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://expressjs-development-3e16.up.railway.app/images/1",
+							"protocol": "https",
+							"host": [
+								"expressjs-development-3e16",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"images",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://expressjs-development-3e16.up.railway.app/images/3",
+							"protocol": "https",
+							"host": [
+								"expressjs-development-3e16",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"images",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

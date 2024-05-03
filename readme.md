@@ -10,3 +10,8 @@ DATABASE_URL="postgresql://postgres:root@localhost:5432/challenge6?schema=public
 IMAGEKIT_PUBLIC_KEY="IMAGEKIT_PUBLIC_KEY"
 IMAGEKIT_PRIVATE_KEY="IMAGEKIT_PRIVATE_KEY"
 IMAGEKIT_URL_ENDPOINT="IMAGEKIT_URL_ENDPOINT"
+
+
+link railway deployment 
+
+https://expressjs-development-3e16.up.railway.app
